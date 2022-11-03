@@ -1,7 +1,7 @@
-public class PerPieceChechoutItem extends CheckoutItem {
+public class PerPieceCheckoutItem extends CheckoutItem {
     private int amount;
 
-    public PerPieceChechoutItem(int id, double price) {
+    public PerPieceCheckoutItem(int id, double price) {
         super(id, price);
         this.amount = 1;
     }

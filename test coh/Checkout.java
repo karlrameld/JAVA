@@ -39,12 +39,12 @@ class Checkout {
             if (ITEM_WITH_WEIGHT_BASED_PRICE.contains(id)) {
                 throw new IllegalArgumentException("ID " + id + " isn't a piece priced item!");
             }
-            PerPieceChechoutItem item;
+            PerPieceCheckoutItem item;
             if (cart.containsKey(id)) {
-                item = (PerPieceChechoutItem) cart.get(id);
+                item = (PerPieceCheckoutItem) cart.get(id);
                 item.addOne();
             } else {
-                item = new PerPieceChechoutItem(id, NORMAL_PRICE_MAP.get(id));
+                item = new PerPieceCheckoutItem(id, NORMAL_PRICE_MAP.get(id));
                 cart.put(id, item);
             }
         } catch (IllegalArgumentException e) {
