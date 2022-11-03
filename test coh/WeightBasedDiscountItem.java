@@ -1,13 +1,9 @@
 public class WeightBasedDiscountItem extends DiscountItem {
-    private double discountedPrice;
-    private double normalPrice;
     private double minimumCartAmount;
 
-    public WeightBasedDiscountItem(int id,double minimumCartAmount, double discountedPrice, double normalPrice) {
-        super(id);
+    public WeightBasedDiscountItem(int id, double discountedPrice, double normalPrice, double minimumCartAmount) {
+        super(id, discountedPrice, normalPrice);
         this.minimumCartAmount = minimumCartAmount;
-        this.discountedPrice = discountedPrice;
-        this.normalPrice = normalPrice;
     }
 
     @Override

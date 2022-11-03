@@ -11,15 +11,15 @@ class Checkout {
     static {
         NORMAL_PRICE_MAP.put(1, 24.95);
         DISCOUNTS_LIST.add(
-                new PieceBasedDiscountItem(1, 3, (NORMAL_PRICE_MAP.get(1) / 3) * 2, NORMAL_PRICE_MAP.get(1)));
+                new PieceBasedDiscountItem(1, (NORMAL_PRICE_MAP.get(1) / 3) * 2, NORMAL_PRICE_MAP.get(1), 3));
         NORMAL_PRICE_MAP.put(2, 59.00);
         ITEM_WITH_WEIGHT_BASED_PRICE.add(2);
         NORMAL_PRICE_MAP.put(3, 11.95);
         NORMAL_PRICE_MAP.put(4, 22.49);
-        DISCOUNTS_LIST.add(new PieceBasedDiscountItem(4, 2, 20, NORMAL_PRICE_MAP.get(4)));
+        DISCOUNTS_LIST.add(new PieceBasedDiscountItem(4, 20, NORMAL_PRICE_MAP.get(4), 2));
         NORMAL_PRICE_MAP.put(5, 32.95);
         ITEM_WITH_WEIGHT_BASED_PRICE.add(5);
-        DISCOUNTS_LIST.add(new WeightBasedDiscountItem(5, 150, 16.95, NORMAL_PRICE_MAP.get(5)));
+        DISCOUNTS_LIST.add(new WeightBasedDiscountItem(5, 16.95, NORMAL_PRICE_MAP.get(5), 150));
         NORMAL_PRICE_MAP.put(6, 11.95);
         NORMAL_PRICE_MAP.put(7, 93.00);
         ITEM_WITH_WEIGHT_BASED_PRICE.add(7);

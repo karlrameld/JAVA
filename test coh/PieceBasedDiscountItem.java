@@ -1,13 +1,9 @@
 public class PieceBasedDiscountItem extends DiscountItem {
     private int purchaseAmount;
-    private double discountedPrice;
-    private double normalPrice;
 
-    public PieceBasedDiscountItem(int id, int purchaseAmount, double discountedPrice, double normalPrice) {
-        super(id);
+    public PieceBasedDiscountItem(int id, double discountedPrice, double normalPrice, int purchaseAmount) {
+        super(id, discountedPrice, normalPrice);
         this.purchaseAmount = purchaseAmount;
-        this.discountedPrice = discountedPrice;
-        this.normalPrice = normalPrice;
     }
 
     @Override
