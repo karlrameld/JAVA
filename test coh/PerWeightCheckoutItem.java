@@ -15,7 +15,7 @@ public class PerWeightCheckoutItem extends CheckoutItem {
     }
 
     @Override
-    protected double calculateNormalPrice() {
+    public double calculateNormalPrice() {
         return this.price * this.weight;
     }
 }

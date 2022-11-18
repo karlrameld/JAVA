@@ -11,9 +11,5 @@ public abstract class CheckoutItem {
         return ID;
     }
 
-    public double calculateCost() {
-        return calculateNormalPrice();
-    }
-
-    protected abstract double calculateNormalPrice();
+    public abstract double calculateNormalPrice();
 }

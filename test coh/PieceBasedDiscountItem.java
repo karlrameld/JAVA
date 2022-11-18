@@ -7,7 +7,7 @@ public class PieceBasedDiscountItem extends DiscountItem {
     }
 
     @Override
-    public double getDiscountAmount(Checkout c) {
+    public double getDiscountAmount(Checkout c, double discount) {
         if (c.getCart().containsKey(this.ID)) {
             PerPieceCheckoutItem item = (PerPieceCheckoutItem) c.getCart().get(this.ID);
             return calculatePriceDifference(item.getAmount());

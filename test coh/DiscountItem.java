@@ -13,5 +13,5 @@ public abstract class DiscountItem {
     public int getId() {
         return ID;
     }
-    public abstract double getDiscountAmount(Checkout c);
+    public abstract double getDiscountAmount(Checkout c, double discount);
 }

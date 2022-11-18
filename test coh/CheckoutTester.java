@@ -59,7 +59,7 @@ public class CheckoutTester {
         c.addItem(5, 4);
         assertEquals(131.80, c.sum());
         c.addItem(5, 1);
-        assertEquals(84.75, c.sum());
+        assertEquals(157.59, c.sum());
     }
 
     @Test
@@ -97,30 +97,35 @@ public class CheckoutTester {
     }
 
     @Test
-    public void testOneOfEach(){
+    public void testOneOfEach() {
         Checkout c = new Checkout();
         c.addItem(1);
         c.addItem(2, 1);
         c.addItem(3);
         c.addItem(4);
+        assertEquals(118.39, c.sum());
         c.addItem(5, 1);
+        assertEquals(150.69, c.sum());
         c.addItem(6);
+        assertEquals(156.84, c.sum());
         c.addItem(7, 1);
+        assertEquals(240.29, c.sum());
         c.addItem(8);
         assertEquals(249.61, c.sum());
     }
 
     @Test
-    public void testEachDiscount(){
+    public void testEachDiscount() {
         Checkout c = new Checkout();
         c.addItem(1);
         c.addItem(1);
         c.addItem(4);
+        assertEquals(72.39, c.sum());
         c.addItem(5, 3);
-        assertEquals(123.24, c.sum());
+        assertEquals(160.93, c.sum());
         c.addItem(1);
-        assertEquals(123.24, c.sum());
+        assertEquals(160.93, c.sum());
         c.addItem(4);
-        assertEquals(140.75, c.sum());
+        assertEquals(169.93, c.sum());
     }
 }

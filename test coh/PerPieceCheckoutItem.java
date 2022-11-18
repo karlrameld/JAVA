@@ -15,7 +15,7 @@ public class PerPieceCheckoutItem extends CheckoutItem {
     }
 
     @Override
-    protected double calculateNormalPrice() {
+    public double calculateNormalPrice() {
         return this.price * this.amount;
     }
 }

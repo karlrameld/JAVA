@@ -7,10 +7,17 @@ public class WeightBasedDiscountItem extends DiscountItem {
     }
 
     @Override
-    public double getDiscountAmount(Checkout c) {
-        if (c.getCart().containsKey(this.ID) && c.calculateBaseCartPrice() >= minimumCartAmount) {
+    public double getDiscountAmount(Checkout c, double discount) {
+        if (c.getCart().containsKey(this.ID) && c.calculateBaseCartPrice() - discount > minimumCartAmount) {
             PerWeightCheckoutItem item = (PerWeightCheckoutItem) c.getCart().get(this.ID);
-            return item.getWeight() * normalPrice - item.getWeight() * discountedPrice;
+            double baseCartPrice = c.calculateBaseCartPrice() - discount - item.calculateNormalPrice();
+            // All of product should be discounted
+            if(baseCartPrice >= minimumCartAmount) 
+                return item.getWeight() * normalPrice - item.getWeight() * discountedPrice;
+            // A percent of product should be discounted
+            double normalPriceWeight = (minimumCartAmount - baseCartPrice) / normalPrice; 
+            double discountedPriceWeight = item.getWeight() - normalPriceWeight;
+            return item.getWeight() * normalPrice - (normalPriceWeight * normalPrice + discountedPriceWeight * discountedPrice);
         }
         return 0;
     }
